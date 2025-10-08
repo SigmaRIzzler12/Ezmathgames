@@ -29,5 +29,11 @@ const games = [
         title: 'Tetris',
         image: 'https://placehold.co/400x300/1F2937/E0E0E0?text=Tetris'
     },
-    // ... Add more games here following the same format
+    // -- This is the new entry for your test game --
+    {
+        id: 'test',  // This ID matches your 'games/test/' folder
+        title: 'Test Game (Baldi)', // This is the title that will show on the card
+        image: 'https://placehold.co/400x300/1F2937/E0E0E0?text=Test'
+    },
+    // ... You can add more games here
 ];
