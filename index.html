@@ -1,55 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const gameGrid = document.getElementById('game-grid');
-    const searchBar = document.getElementById('search-bar');
-    const noResultsMessage = document.getElementById('no-results');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezmathgames - Unblocked Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200">
 
-    // Function to display games on the page
-    const displayGames = (gamesToDisplay) => {
-        gameGrid.innerHTML = ''; // Clear existing games
-        if (gamesToDisplay.length === 0) {
-            noResultsMessage.classList.remove('hidden');
-        } else {
-            noResultsMessage.classList.add('hidden');
-        }
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2 tracking-wide">
+                Ezmathgames
+            </h1>
+            <p class="text-lg text-gray-400">The best place for unblocked games and fun!</p>
+        </header>
 
-        gamesToDisplay.forEach(game => {
-            // Create the game card element
-            const gameCard = document.createElement('a');
-            gameCard.href = `play.html?game=${game.id}`;
-            gameCard.className = 'game-card group block';
-            gameCard.setAttribute('data-title', game.title.toLowerCase());
+        <!-- Search Bar -->
+        <div class="mb-10 max-w-2xl mx-auto">
+            <input type="text" id="search-bar" placeholder="Search for a game..." class="w-full px-5 py-3 bg-gray-800 border-2 border-gray-700 rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors duration-300">
+        </div>
 
-            // Create the image element
-            const gameImage = document.createElement('img');
-            gameImage.src = game.image;
-            gameImage.alt = game.title;
-            gameImage.className = 'game-card-img';
-            gameImage.onerror = () => { gameImage.src = 'https://placehold.co/400x300/111827/FFFFFF?text=Image+Not+Found' };
+        <!-- Games Grid Section -->
+        <main>
+            <div id="game-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+                <!-- Game cards will be dynamically inserted here by JavaScript -->
+            </div>
+            <p id="no-results" class="text-center text-gray-400 text-xl hidden">No games found matching your search.</p>
+        </main>
 
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-500">
+            <p>&copy; 2024 Ezmathgames. All rights reserved.</p>
+        </footer>
+    </div>
 
-            // Create the title element
-            const gameTitle = document.createElement('div');
-            gameTitle.className = 'game-card-title';
-            gameTitle.textContent = game.title;
-            
-            // Append image and title to the card
-            gameCard.appendChild(gameImage);
-            gameCard.appendChild(gameTitle);
-
-            // Append the card to the grid
-            gameGrid.appendChild(gameCard);
-        });
-    };
-
-    // Initial display of all games
-    displayGames(games);
-
-    // Search functionality
-    searchBar.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const filteredGames = games.filter(game => 
-            game.title.toLowerCase().includes(searchTerm)
-        );
-        displayGames(filteredGames);
-    });
-});
+    <!-- JavaScript files -->
+    <script src="assets/js/games.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
