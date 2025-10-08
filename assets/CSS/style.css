@@ -1,0 +1,55 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom scrollbar for a modern look */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #111827; /* bg-gray-900 */
+}
+::-webkit-scrollbar-thumb {
+    background: #374151; /* bg-gray-700 */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4B5563; /* bg-gray-600 */
+}
+
+/* Style for the game cards */
+.game-card {
+    background-color: #1F2937; /* bg-gray-800 */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: #F3F4F6; /* text-gray-100 */
+    border: 1px solid #374151; /* border-gray-700 */
+}
+
+.game-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1), 0 6px 6px rgba(0, 255, 255, 0.05);
+}
+
+.game-card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.game-card-title {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.hidden {
+    display: none !important;
+}
